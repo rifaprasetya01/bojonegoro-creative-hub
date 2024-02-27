@@ -1,0 +1,14 @@
+.header {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: var(--gap-200);
+
+  margin-bottom: var(--gap-1600);
+
+  .heading {
+    min-width: auto;
+    max-width: 500px;
+    text-transform: capitalize;
+  }
+}

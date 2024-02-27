@@ -1,0 +1,11 @@
+export {default as HeroSection} from './HeroSection';
+export {default as SectorsSection} from './SectorsSection';
+export {default as CTABookingSection} from './CTABookingSection';
+export {default as AboutSection} from './AboutSection';
+export {default as CTAVisitSection} from './CTAVisitSection';
+export {default as HistorySection} from './HistorySection';
+export {default as GallerySection} from './GallerySection';
+export {default as InfoSection} from './InfoSection';
+export {default as YoutubeEmbedSection} from './YoutubeEmbedSection';
+export {default as NewsSection} from './NewsSection';
+export {default as CollaborationSection} from './CollaborationSection';

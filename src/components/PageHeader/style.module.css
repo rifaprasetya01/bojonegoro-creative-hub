@@ -1,0 +1,33 @@
+.page-header {
+  position: relative;
+
+  .background-header {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+
+    @media (min-width: 768px) {
+      height: 300px;
+    }
+  }
+
+  .heading {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: var(--clr-secondary-alpha-08);
+
+    color: var(--clr-primary);
+
+    display: flex;
+    align-items: center;
+
+    @media (min-width: 768px) {
+      font-size: var(--fs-800);
+    }
+  }
+}

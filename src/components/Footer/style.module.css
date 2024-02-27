@@ -1,0 +1,113 @@
+.footer {
+  background-color: var(--clr-dark);
+
+  padding: var(--gap-1200) var(--gap-500);
+
+  color: var(--clr-white);
+
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  flex-direction: column;
+  gap: var(--gap-700);
+
+  @media (min-width: 1024px) {
+    padding: var(--gap-1200) 10vw;
+  }
+
+  .brand {
+    height: fit-content;
+    width: fit-content;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--gap-base);
+
+    .brand-logo {
+      height: 60px;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      filter: invert(100%);
+    }
+
+    .brand-text {
+      .brand-name {
+        font-family: var(--ff-poppins-b);
+        font-size: var(--fs-700);
+        line-height: var(--lh-400);
+      }
+
+      .brand-vision {
+        font-family: var(--ff-lato-t);
+        font-size: var(--fs-100);
+      }
+    }
+  }
+
+  .main-content {
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    flex-direction: column;
+    gap: var(--gap-700);
+
+    @media (min-width: 768px) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      align-items: start;
+    }
+
+    .content {
+      display: flex;
+      justify-content: center;
+      align-items: left;
+      flex-direction: column;
+      gap: var(--gap-300);
+
+      .heading {
+        margin-bottom: var(--gap-200);
+
+        font-size: var(--fs-400);
+        font-family: var(--ff-poppins-sb);
+      }
+
+      .link,
+      .wrapper {
+        font-size: var(--fs-300);
+        font-family: var(--ff-poppins-r);
+        letter-spacing: 1px;
+      }
+
+      .link {
+        transition: 300ms;
+
+        &:hover {
+          filter: brightness(30%);
+        }
+      }
+
+      &.socialmedia {
+        .link {
+          display: flex;
+          justify-content: left;
+          align-items: center;
+          gap: var(--fs-100);
+        }
+      }
+
+      &.contactinfo {
+        .wrapper {
+          display: flex;
+          justify-content: left;
+          align-items: start;
+          gap: var(--gap-300);
+        }
+      }
+    }
+  }
+
+  .copyright {
+    text-align: center;
+  }
+}

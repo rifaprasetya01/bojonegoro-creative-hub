@@ -1,0 +1,79 @@
+.contact-page {
+  .contact-info-section {
+    .contact-info-list {
+      .list-item {
+        display: flex;
+        justify-content: start;
+        align-items: start;
+        gap: 20px;
+
+        margin: 10px 0px;
+
+        .item-icon {
+          font-size: var(--fs-300);
+        }
+
+        .item-content {
+          .content-label {
+            font-family: var(--ff-poppins-b);
+            font-size: calc(var(--fs-300) * 1.2);
+          }
+
+          .content-contact {
+            font-family: var(--ff-poppins-r);
+            font-size: var(--fs-300);
+          }
+        }
+      }
+    }
+  }
+
+  .about-section {
+    .section-body {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--gap-800);
+
+      @media (min-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .company-photo {
+        width: 100%;
+        aspect-ratio: 1 / 0.6;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .social-media-section {
+    .social-media-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: var(--gap-800);
+
+      .social-media-icon {
+        background-color: var(--clr-primary);
+
+        padding: var(--gap-500);
+
+        font-size: var(--fs-500);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        border-radius: 100%;
+
+        transition: background 300ms, color 300ms;
+
+        &:hover {
+          background-color: var(--clr-secondary);
+
+          color: var(--clr-primary);
+        }
+      }
+    }
+  }
+}

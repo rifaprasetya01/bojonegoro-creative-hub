@@ -1,0 +1,145 @@
+.navbar {
+  --navbar-height: 50px;
+  --navbar-padding: var(--gap-500);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: sticky;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 999;
+
+  background-color: var(--clr-primary);
+
+  padding: var(--navbar-padding);
+
+  height: var(--navbar-height);
+
+  @media (min-width: 1024px) {
+    justify-content: space-between;
+
+    padding: var(--navbar-padding) 10vw;
+  }
+
+  .trigger-btn {
+    position: absolute;
+    left: 0px;
+    left: var(--navbar-padding);
+
+    height: var(--navbar-height);
+    aspect-ratio: 1 / 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: transparent;
+
+    font-size: var(--fs-400);
+
+    @media (min-width: 1024px) {
+      display: none;
+    }
+  }
+
+  .brand {
+    height: fit-content;
+    width: fit-content;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--gap-base);
+
+    .brand-logo {
+      height: var(--navbar-height);
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+    }
+
+    .brand-text {
+      .brand-name {
+        font-family: var(--ff-poppins-b);
+        font-size: var(--fs-700);
+        line-height: var(--lh-400);
+        letter-spacing: var(--gap-base);
+      }
+
+      .brand-vision {
+        font-family: var(--ff-lato-l);
+        font-size: var(--fs-50);
+      }
+    }
+  }
+
+  .links {
+    position: fixed;
+    top: calc(var(--navbar-height) + (var(--navbar-padding) * 2));
+    bottom: 0px;
+    left: -100%;
+
+    width: 300px;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--clr-secondary);
+
+    transition: 300ms;
+    transition-delay: 0.5s;
+
+    @media (min-width: 1024px) {
+      position: static;
+
+      flex-direction: row;
+
+      width: fit-content;
+
+      background-color: transparent;
+
+      &:hover {
+        .link {
+          opacity: 0.5;
+        }
+      }
+    }
+
+    &.isOpen {
+      left: 0px;
+      transition-delay: 0s;
+    }
+
+    .link {
+      padding: var(--navbar-padding);
+
+      font-family: var(--ff-poppins-r);
+      font-size: var(--fs-nav);
+
+      color: var(--clr-white);
+
+      transition: 300ms;
+
+      &:hover {
+        background-color: var(--clr-light);
+        color: var(--clr-dark);
+      }
+
+      @media (min-width: 1024px) {
+        padding: var(--gap-400) calc(var(--gap-400) * 2);
+
+        color: var(--clr-dark);
+
+        &:hover {
+          background-color: transparent;
+          letter-spacing: 2px;
+          scale: 1.2;
+          text-decoration: underline;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

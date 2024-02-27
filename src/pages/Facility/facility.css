@@ -1,0 +1,250 @@
+.facility-page {
+  .facility-section {
+    .facility-body {
+      display: grid;
+      justify-content: center;
+      grid-template-columns: repeat(2, minmax(auto, 280px));
+      gap: var(--gap-300);
+
+      width: 100%;
+
+      @media (min-width: 768px) {
+        grid-template-columns: repeat(3, minmax(auto, 250px));
+        gap: var(--gap-800);
+      }
+
+      @media (min-width: 1024px) {
+        grid-template-columns: repeat(auto-fit, 250px);
+      }
+    }
+  }
+
+  .creative-room-section {
+    .floor-content {
+      margin: var(--gap-800) 0;
+      .floor-slider {
+        margin-top: var(--gap-300);
+        .floor-slide {
+          position: relative;
+
+          width: 100%;
+          aspect-ratio: 1 / 0.8;
+
+          overflow: hidden;
+
+          @media (min-width: 768px) {
+            aspect-ratio: 1 / 1;
+          }
+          .slide-background {
+            width: inherit;
+            aspect-ratio: inherit;
+            object-fit: cover;
+
+            transition: scale 300ms;
+          }
+
+          .slide-body {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+
+            opacity: 0;
+
+            width: 100%;
+            height: 100%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: var(--gap-800);
+
+            text-align: center;
+
+            background-color: var(--clr-secondary-alpha-08);
+
+            transition: opacity 300ms;
+
+            .slide-heading,
+            .slide-text {
+              color: var(--clr-light);
+            }
+          }
+
+          &:hover {
+            .slide-background {
+              scale: 1.4;
+            }
+
+            .slide-body {
+              opacity: 1;
+            }
+          }
+        }
+      }
+
+      .paginations {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        position: absolute;
+        top: unset;
+        bottom: var(--gap-200);
+        z-index: 9999;
+
+        gap: var(--gap-500);
+
+        left: 50%;
+        transform: translateX(-50%);
+
+        width: fit-content;
+        height: fit-content;
+
+        @media (min-width: 768px) {
+          bottom: var(--gap-500);
+        }
+
+        .pagination-bullet {
+          background-color: var(--clr-secondary);
+
+          border: 1px solid var(--clr-accent-1);
+
+          width: 15px;
+          aspect-ratio: 1 / 1;
+
+          rotate: 45deg;
+
+          position: relative;
+
+          cursor: pointer;
+
+          &::before {
+            content: '';
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform-origin: left top;
+            transform: translate(-50%, -50%);
+
+            width: 5px;
+            aspect-ratio: 1 / 1;
+
+            background-color: var(--clr-accent-1);
+
+            transition: 300ms;
+          }
+
+          &:hover {
+            &::before {
+              scale: 4;
+            }
+          }
+
+          &.pagination-active {
+            &::before {
+              background-color: var(--clr-light);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .supporting-facilities-section {
+    .facility-list {
+      list-style: none;
+
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--gap-base);
+
+      @media (min-width: 768px) {
+        gap: var(--gap-300);
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .list-item {
+        display: flex;
+        align-items: center;
+        gap: var(--gap-300);
+
+        :first-child {
+          color: var(--clr-accent-1);
+        }
+      }
+    }
+  }
+
+  .floor-review-section {
+    display: grid;
+    gap: var(--gap-1000);
+
+    .floor-navigation {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--gap-base);
+
+      .nav-btn {
+        width: auto;
+
+        text-transform: capitalize;
+      }
+
+      .activeFloor {
+        background-color: var(--clr-accent-1);
+
+        color: var(--clr-light);
+      }
+    }
+
+    .body-floor-review {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: var(--gap-500);
+
+      @media (min-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .banner-photo {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+      }
+
+      .body-content {
+        .heading {
+          text-transform: capitalize;
+        }
+
+        .subheading {
+          color: var(--clr-accent-1);
+          text-transform: capitalize;
+
+          padding: 0px;
+          margin-bottom: var(--gap-300);
+
+          background-color: transparent;
+        }
+
+        .floor-features {
+          list-style: none;
+
+          .features-item {
+            margin: var(--gap-300);
+
+            display: flex;
+            align-items: center;
+            gap: var(--gap-300);
+
+            :first-child {
+              color: var(--clr-accent-1);
+            }
+          }
+        }
+      }
+    }
+  }
+}
