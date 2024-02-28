@@ -21,7 +21,9 @@
         position: relative;
 
         .slide-bg {
-          height: 100%;
+          width: 100%;
+          aspect-ratio: 1 / 0.8;
+          object-fit: cover;
         }
 
         .slide-body {
@@ -288,6 +290,10 @@
       @media (min-width: 1024px) {
         grid-template-columns: repeat(auto-fit, 250px);
       }
+    }
+
+    .show-hide-btn {
+      margin: var(--gap-1600) auto;
     }
   }
 

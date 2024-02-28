@@ -1,4 +1,3 @@
-import {Fragment} from 'react';
 import {Swiper, SwiperSlide} from 'swiper/react';
 import {Autoplay} from 'swiper/modules';
 import {NewsCard, SectionHeader} from '../../../components';
@@ -34,18 +33,16 @@ function NewsSection() {
         className="news-slider">
         {newsDatas.map((news, index) => {
           return (
-            <Fragment key={index}>
-              <SwiperSlide>
-                <NewsCard
-                  authorPicture={news.newsProfile.authorPict}
-                  authorName={news.newsProfile.authorName}
-                  commentsCount={news.newsProfile.commentsCount}
-                  image={news.image}
-                  title={news.title}
-                  article={news.article}
-                />
-              </SwiperSlide>
-            </Fragment>
+            <SwiperSlide key={index}>
+              <NewsCard
+                authorPicture={news.newsProfile.authorPict}
+                authorName={news.newsProfile.authorName}
+                commentsCount={news.newsProfile.commentsCount}
+                image={news.image}
+                title={news.title}
+                article={news.article}
+              />
+            </SwiperSlide>
           );
         })}
       </Swiper>

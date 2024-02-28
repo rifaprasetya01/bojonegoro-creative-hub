@@ -23,8 +23,25 @@ import {Card, SectionHeader} from '../../../components';
 
 import img1 from '../../../assets/images/img1.jpg';
 import img2 from '../../../assets/images/img2.jpg';
+import {useState} from 'react';
+import {useEffect} from 'react';
 
 function SectorsSection() {
+  const limiter = 8;
+  const [visibleSectors, setVisibleSectors] = useState([]);
+
+  useEffect(() => {
+    setVisibleSectors(sectorCardDatas.slice(0, limiter));
+  }, []);
+
+  const showAllHandler = () => {
+    if (visibleSectors.length > limiter) {
+      setVisibleSectors(sectorCardDatas.slice(0, limiter));
+    } else {
+      setVisibleSectors(sectorCardDatas);
+    }
+  };
+
   return (
     <section className="sectors-section section">
       <SectionHeader
@@ -32,7 +49,7 @@ function SectorsSection() {
         heading={'17 economic sectors of Bojonegoro city'}
       />
       <main className="body">
-        {sectorCardDatas.map((data, index) => {
+        {visibleSectors.map((data, index) => {
           return (
             <Fragment key={index}>
               <Card
@@ -45,6 +62,12 @@ function SectorsSection() {
           );
         })}
       </main>
+
+      <button
+        onClick={showAllHandler}
+        className="show-hide-btn btn btn-primary btn-md">
+        {visibleSectors.length > limiter ? 'Hide' : 'Show All'}
+      </button>
     </section>
   );
 }

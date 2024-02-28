@@ -3,9 +3,9 @@ import {Swiper, SwiperSlide} from 'swiper/react';
 import {Pagination, Navigation, Autoplay, EffectFade} from 'swiper/modules';
 import {FaChevronLeft, FaChevronRight} from 'react-icons/fa6';
 
-  import img1 from '../../../assets/images/img1.jpg';
-  import img2 from '../../../assets/images/img2.jpg';
-  import logo from '../../../assets/images/bch-logo.png';
+import img1 from '../../../assets/images/img1.jpg';
+import img2 from '../../../assets/images/img2.jpg';
+import logo from '../../../assets/images/bch-logo.png';
 
 import 'swiper/css';
 import 'swiper/css/navigation';

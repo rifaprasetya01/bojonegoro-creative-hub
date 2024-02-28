@@ -9,7 +9,6 @@ import {
   FaPhone,
   FaEnvelope,
   FaLocationPin,
-  FaCopyright,
 } from 'react-icons/fa6';
 
 import bchLogo from '../../assets/images/bch-logo.png';
@@ -128,8 +127,8 @@ function Footer() {
 
       <hr />
 
-      <p className={`${style['copyright']}`}>
-        2022 - Now <FaCopyright /> Copyright by Bojonegoro Crative Hub
+      <p className={`${style['copyright']} poppins-regular`}>
+        2022 - Now &copy; Copyright by Bojonegoro Crative Hub
       </p>
     </footer>
   );

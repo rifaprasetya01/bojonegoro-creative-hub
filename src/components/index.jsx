@@ -6,3 +6,4 @@ export {default as NewsCard} from './Cards/NewsCard';
 export {default as Frame} from './Frame';
 export {default as PageHeader} from './PageHeader';
 export {default as ScrollToTop} from './ScrollToTop';
+export {default as SwipeAnimation} from './Animations/Swipe';
